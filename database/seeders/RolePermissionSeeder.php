@@ -20,6 +20,7 @@ class RolePermissionSeeder extends Seeder
             'delete-article',
             'publish-article',
             'manage-users',
+            'manage-categories-subcategories'
         ];
 
         foreach ($permissions as $permission) {

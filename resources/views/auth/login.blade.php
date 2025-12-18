@@ -47,50 +47,39 @@
 
             <!-- LOGIN FORM -->
             <form method="POST" action="{{ route('login') }}">
-                @csrf
+            @csrf
 
-                  @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul class="mb-0">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                <!-- Email -->
-                <div class="mb-3">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" class="form-control" placeholder="Enter email" required>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
+            @endif
 
-                <!-- Password -->
-                <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="Enter password" required>
-                </div>
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+            </div>
 
-                <!-- Remember Me -->
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="remember">
-                    <label class="form-check-label" for="remember">
-                        Remember me
-                    </label>
-                </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+            </div>
 
-                <!-- Button -->
-                <div class="d-grid">
-                    <button class="btn btn-primary btn-lg">Log In</button>
-                </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                <label class="form-check-label" for="remember">
+                    Remember me
+                </label>
+            </div>
 
-                <!-- Forgot -->
-                {{-- <div class="text-center mt-3">
-                    <a href="#" class="text-decoration-none text-muted">
-                        Forgot your password?
-                    </a>
-                </div> --}}
-            </form>
-
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+            </div>
+        </form>
         </div>
     </div>
 </div>
