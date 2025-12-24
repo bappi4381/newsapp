@@ -6,7 +6,7 @@
     {{-- Page Header --}}
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="fw-bold text-uppercase mb-0"
-            style="letter-spacing:2px;color:#6f4e37;">
+            style="letter-spacing:2px;color:#0056b3;">
             <i class="bi bi-folder2-open me-2"></i>
             Category & Subcategory Management
         </h4>
@@ -206,11 +206,11 @@ document.getElementById('type').addEventListener('change', function () {
 {{-- Theme --}}
 <style>
 .btn-brown{
-    background:#6f4e37;
+    background:#0056b3;
     color:#fff;
 }
 .btn-brown:hover{
-    background:#8b5e3c;
+    background:#0056b3;
     color:#fff;
 }
 .card-header{

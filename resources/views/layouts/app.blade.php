@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/simple-line-icons/css/simple-line-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
@@ -165,7 +166,16 @@
                 <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
                 <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
                 <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
-                <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                <a class="dropdown-item"
+                  href="{{ route('logout') }}"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>
+                    Sign Out
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>              
               </div>
             </li>
           </ul>
@@ -198,47 +208,36 @@
                 @can('manage-categories-subcategories')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('category_subcategory.index') }}">
-                        <i class="mdi mdi-folder2-open menu-icon"></i>
+                        <i class="mdi mdi-bulletin-board menu-icon"></i>
                         <span class="menu-title">Category Setup</span>
                     </a>
                 </li>
                 @endcan
 
-                @can('create-article')
+                @if(auth()->user()->can('create-article') || auth()->user()->can('edit-article') || auth()->user()->can('publish-article') || auth()->user()->can('delete-article'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('articles.create') }}">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#articleMenu" role="button" aria-expanded="false" aria-controls="articleMenu">
                         <i class="mdi mdi-pencil-box-outline menu-icon"></i>
-                        <span class="menu-title">Create Article</span>
+                        <span class="menu-title">Articles</span>
+                        <i class="menu-arrow"></i>
                     </a>
-                </li>
-                @endcan
+                    <div class="collapse" id="articleMenu">
+                        <ul class="nav flex-column sub-menu">
+                            @can('create-article')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('articles.create') }}">Create Article</a>
+                            </li>
+                            @endcan
 
-                @can('edit-article')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('articles.index') }}">
-                        <i class="mdi mdi-file-document-edit-outline menu-icon"></i>
-                        <span class="menu-title">Edit Articles</span>
-                    </a>
+                            @canany(['edit-article','publish-article','delete-article'])
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('articles.index') }}">Manage Articles</a>
+                            </li>
+                            @endcanany
+                        </ul>
+                    </div>
                 </li>
-                @endcan
-
-                @can('publish-article')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('articles.publish') }}">
-                        <i class="mdi mdi-upload menu-icon"></i>
-                        <span class="menu-title">Publish Articles</span>
-                    </a>
-                </li>
-                @endcan
-
-                @can('delete-article')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('articles.deleted') }}">
-                        <i class="mdi mdi-delete menu-icon"></i>
-                        <span class="menu-title">Deleted Articles</span>
-                    </a>
-                </li>
-                @endcan
+                @endif
             </ul>
         </nav>
         <!-- partial -->
@@ -279,6 +278,7 @@
     <script src="{{ asset('admin/assets/js/jquery.cookie.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
     <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
     <!-- End custom js for this page-->
   </body>
 </html>
