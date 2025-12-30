@@ -8,8 +8,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\NewsController;
 
-
+Route::get('/', [NewsController::class, 'index'])->name('home');
 Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
 
 Route::post('login', [AuthenticatedSessionController::class, 'store']);

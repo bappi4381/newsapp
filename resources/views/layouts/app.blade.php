@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Newsportal Admin </title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/feather/feather.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/ti-icons/css/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/typicons/typicons.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/simple-line-icons/css/simple-line-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/css/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/feather/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/ti-icons/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/typicons/typicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/simple-line-icons/css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/js/select.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetsvendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/{{ asset('/') }}assetsjs/select.dataTables.min.css') }}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/{{ asset('/') }}assetscss/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('admin/{{ asset('/') }}assetsimages/favicon.png') }}" />
   </head>
   <body class="with-welcome-text">
     <div class="container-scroller">
@@ -37,10 +37,10 @@
           </div>
           <div>
             <a class="navbar-brand brand-logo" href="index.html">
-              <img src="{{ asset('admin/assets/images/logo.svg') }}" alt="logo" />
+              <img src="{{ asset('admin/{{ asset('/') }}assetsimages/logo.svg') }}" alt="logo" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="index.html">
-              <img src="{{ asset('admin/assets/images/logo-mini.svg') }}" alt="logo" />
+              <img src="{{ asset('admin/{{ asset('/') }}assetsimages/logo-mini.svg') }}" alt="logo" />
             </a>
           </div>
         </div>
@@ -126,7 +126,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="{{ asset('/') }}assetsimages/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis fw-medium text-dark">Marian Garner </p>
@@ -135,7 +135,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="{{ asset('/') }}assetsimages/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis fw-medium text-dark">David Grey </p>
@@ -144,7 +144,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="{{ asset('/') }}assetsimages/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis fw-medium text-dark">Travis Jenkins </p>
@@ -155,10 +155,10 @@
             </li>
             <li class="nav-item dropdown d-none d-lg-block user-dropdown">
               <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle" src="{{ asset('/') }}assetsimages/faces/face8.jpg" alt="Profile image"> </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image">
+                  <img class="img-md rounded-circle" src="{{ asset('/') }}assetsimages/faces/face8.jpg" alt="Profile image">
                   <p class="mb-1 mt-3 fw-semibold">Allen Moreno</p>
                   <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
                 </div>
@@ -260,24 +260,24 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="{{ asset('admin/assets/vendors/js/vendor.bundle.base.js') }}"></script>
-    <script src="{{ asset('admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsvendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsvendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="{{ asset('admin/assets/vendors/chart.js/chart.umd.js') }}"></script>
-    <script src="{{ asset('admin/assets/vendors/progressbar.js/progressbar.min.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsvendors/chart.js/chart.umd.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsvendors/progressbar.js/progressbar.min.js') }}"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="{{ asset('admin/assets/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/template.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/settings.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/todolist.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsjs/off-canvas.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsjs/template.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsjs/settings.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsjs/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsjs/todolist.js') }}"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="{{ asset('admin/assets/js/jquery.cookie.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
-    <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
+    <script src="{{ asset('admin/{{ asset('/') }}assetsjs/jquery.cookie.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('admin/{{ asset('/') }}assetsjs/dashboard.js') }}"></script>
+    <!-- <script src="{{ asset('/') }}assetsjs/Chart.roundedBarCharts.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
     <!-- End custom js for this page-->
   </body>

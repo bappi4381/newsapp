@@ -29,6 +29,7 @@
                 <th>#</th>
                 <th>Title</th>
                 <th>Author</th>
+                <th>Published At</th>
                 <th>Status</th>
                 <th width="220">Actions</th>
             </tr>
@@ -39,8 +40,8 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $article->title }}</td>
-                    <td>{{ $article->user->name ?? '—' }}</td>
-
+                    <td>{{ $article->author->name ?? '—' }}</td>
+                    <td>{{ $article->created_at ? $article->created_at->format('M d, Y') : '—' }}</td>
                     <td>
                         @if($article->is_published)
                             <span class="badge bg-success">Published</span>
