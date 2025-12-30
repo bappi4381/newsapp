@@ -59,4 +59,11 @@ class SubcategoryController extends Controller
 
         return response()->json($subcategories);
     }
+    public function byCategory($id)
+    {
+        return Subcategory::where('category_id', $id)
+            ->select('id', 'name')
+            ->orderBy('name')
+            ->get();
+    }
 }

@@ -114,8 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Description editor (Summernote)
     $('#description').summernote({
-        placeholder: 'Short description shown with article…',
+        placeholder: 'Enter description shown with article…',
         height: 180
+
     });
 
     // Auto slug generator

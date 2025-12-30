@@ -30,7 +30,7 @@ class ArticleController extends Controller
             'category_id'    => 'required|exists:categories,id',
             'subcategory_id' => 'nullable|exists:subcategories,id',
             'content'        => 'required|string',
-            'description'    => 'nullable|string|max:500',
+            'description'    => 'nullable|string',
             'image'          => 'nullable|image|max:2048',
         ]);
 

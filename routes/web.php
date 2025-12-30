@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
         // Add route for getting subcategories (e.g., for AJAX dependent dropdowns)
         Route::get('/categories/by-type/{type}', [CategoryController::class, 'getByType'])->name('categories.byType');
         Route::get('get-subcategories', [SubcategoryController::class, 'getSubcategories'])->name('get.subcategories');
+        Route::get('/subcategories/by-category/{id}', [SubcategoryController::class, 'byCategory'])->name('subcategories.byCategory');
     });
 
     // ---------------------------

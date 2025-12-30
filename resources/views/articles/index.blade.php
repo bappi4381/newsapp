@@ -61,7 +61,7 @@
                         {{-- PUBLISH --}}
                         @can('publish-article')
                             @if(!$article->is_published)
-                                <form action="{{ route('articles.publish.store', $article->id) }}" 
+                                <form action="{{ route('articles.publish', $article->id) }}" 
                                       method="POST" class="d-inline">
                                     @csrf
                                     <button class="btn btn-sm btn-success" type="submit">
@@ -73,7 +73,7 @@
 
                         {{-- DELETE --}}
                         @can('delete-article')
-                            <form action="{{ route('articles.destroy', $article->id) }}" 
+                            <form action="{{ route('articles.deleted', $article->id) }}" 
                                   method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
